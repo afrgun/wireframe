@@ -105,6 +105,14 @@
         <p>Browse of video</p>
       </div>
       <div class="line"></div>
+      <div class="box-activity" *ngFor="let data of newArticle">
+        <img src="{{data.urlToImage}}" alt="img"/>
+        <div class="box-activity__info">
+          <h2>{{data.author}} </h2>
+          <p>{{data.description | limitTo : "30"}}</p>
+          <p><i class="fa fa-comment-o" aria-hidden="true"></i> 2 Comments</p>
+        </div>
+      <!-- </div>
       <div class="box-activity">
         <img src="https://via.placeholder.com/120x75" alt="img"/>
         <div class="box-activity__info">
@@ -136,15 +144,7 @@
           <p>Lorem ipsum dolor sit amet...</p>
           <p><i class="fa fa-comment-o" aria-hidden="true"></i> 2 Comments</p>
         </div>
-      </div>
-      <div class="box-activity">
-        <img src="https://via.placeholder.com/120x75" alt="img"/>
-        <div class="box-activity__info">
-          <h2>Jhon Srenk <span>Commented</span></h2>
-          <p>Lorem ipsum dolor sit amet...</p>
-          <p><i class="fa fa-comment-o" aria-hidden="true"></i> 2 Comments</p>
-        </div>
-      </div>
+      </div> -->
       <div class="line"></div>
     </div>
   </div>

@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   public listVideo : any = [];
   public listVideoUrl : any = [];
   public newVideo : any = [];
+  public newArticle : any = [];
 
   constructor(
 	  private service: ApiService
@@ -20,6 +21,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.loadDataWIthUrl();
     this.loadData();
+    this.loadArticles();
     setTimeout(()=>{
       this.joinValue();
     }, 500)
@@ -43,6 +45,14 @@ export class HomeComponent implements OnInit {
     const newData = this.listVideo.map((obj, i)=>({...obj,'video':this.listVideoUrl[i].embed_url}));
     this.newVideo = newData;
     console.log(this.newVideo)
+  }
+
+  loadArticles(){
+    this.service.getArticles().subscribe(data => {
+      this.newArticle = data['articles']
+
+    })
+
   }
 
 }

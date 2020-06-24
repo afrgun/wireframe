@@ -14,19 +14,19 @@ export class ApiService {
 
   getVideo(limit){
     let req = { "limit" : limit, "languages": "id"}
-    return this.getDataHeader(Configuration.BASE_URL + Configuration.GET_VIDEOS, req)
+    return this.getDataHeader(Configuration.BASE_URL_VIDEO + Configuration.GET_VIDEOS, req)
   }
 
   getVideoUrl(limit){
     let req = { "limit" : limit,"fields": "embed_url"}
-    return this.getDataHeader(Configuration.BASE_URL + Configuration.GET_VIDEOS, req)
+    return this.getDataHeader(Configuration.BASE_URL_VIDEO + Configuration.GET_VIDEOS, req)
   }
 
-  createHeaderAuth(){
-    let headers = new HttpHeaders();
-    headers.append('Content-Type','application/json');
-    return headers;
+  getArticles(){
+    let req ={ "country": "id","apiKey": "b908cfab98cd4bfdafc093e07adda764","pageSize":5}
+    return this.getDataHeader(Configuration.BASE_URL_ARTICLE + Configuration.GET_ARTICLES, req)
   }
+
 
   getDataHeader(url, params) {
     return this.httpClient.get(url,{params:params, headers: this.createHeaderAuth() })
@@ -34,6 +34,12 @@ export class ApiService {
         map((response: Response) => response),
         catchError(this.handleError)
       ) 
+  }
+
+  createHeaderAuth(){
+    let headers = new HttpHeaders();
+    headers.append('Content-Type','application/json');
+    return headers;
   }
 
   private handleError(error) {
