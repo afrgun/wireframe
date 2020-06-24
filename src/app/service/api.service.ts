@@ -13,7 +13,12 @@ export class ApiService {
   constructor(private httpClient: HttpClient) {  }
 
   getVideo(limit){
-    let req = { "limit" : limit}
+    let req = { "limit" : limit, "languages": "id"}
+    return this.getDataHeader(Configuration.BASE_URL + Configuration.GET_VIDEOS, req)
+  }
+
+  getVideoUrl(limit){
+    let req = { "limit" : limit,"fields": "embed_url"}
     return this.getDataHeader(Configuration.BASE_URL + Configuration.GET_VIDEOS, req)
   }
 

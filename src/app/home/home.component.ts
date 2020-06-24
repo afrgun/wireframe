@@ -9,19 +9,40 @@ import { ApiService } from '../service/api.service';
 export class HomeComponent implements OnInit {
 
   public limit: number = 5;
+  public listVideo : any = [];
+  public listVideoUrl : any = [];
+  public newVideo : any = [];
 
   constructor(
 	  private service: ApiService
   ) { }
 
   ngOnInit(): void {
-	this.loadData();
+    this.loadDataWIthUrl();
+    this.loadData();
+    setTimeout(()=>{
+      this.joinValue();
+    }, 500)
   }
 
   loadData(){
     this.service.getVideo(this.limit).subscribe(data => {
-      console.log(data);
+      this.listVideo = data['list'];
+      console.log(this.listVideo);
     })
+  }
+
+  loadDataWIthUrl(){
+    this.service.getVideoUrl(this.limit).subscribe(data => {
+      this.listVideoUrl = data['list'];
+      console.log(this.listVideoUrl);
+    })
+  }
+
+  joinValue(){
+    const newData = this.listVideo.map((obj, i)=>({...obj,'video':this.listVideoUrl[i].embed_url}));
+    this.newVideo = newData;
+    console.log(this.newVideo)
   }
 
 }
