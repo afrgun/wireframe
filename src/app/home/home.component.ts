@@ -21,30 +21,29 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.loadDataWIthUrl();
     this.loadData();
-    this.loadArticles();
+	this.loadArticles();
+	
     setTimeout(()=>{
       this.joinValue();
-    }, 500)
+    }, 700)
   }
+
 
   loadData(){
     this.service.getVideo(this.limit).subscribe(data => {
       this.listVideo = data['list'];
-      console.log(this.listVideo);
     })
   }
 
   loadDataWIthUrl(){
     this.service.getVideoUrl(this.limit).subscribe(data => {
       this.listVideoUrl = data['list'];
-      console.log(this.listVideoUrl);
     })
   }
 
   joinValue(){
     const newData = this.listVideo.map((obj, i)=>({...obj,'video':this.listVideoUrl[i].embed_url}));
     this.newVideo = newData;
-    console.log(this.newVideo)
   }
 
   loadArticles(){

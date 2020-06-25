@@ -105,46 +105,9 @@
         <p>Browse of video</p>
       </div>
       <div class="line"></div>
-      <div class="box-activity" *ngFor="let data of newArticle">
-        <img src="{{data.urlToImage}}" alt="img"/>
-        <div class="box-activity__info">
-          <h2>{{data.author}} </h2>
-          <p>{{data.description | limitTo : "30"}}</p>
-          <p><i class="fa fa-comment-o" aria-hidden="true"></i> 2 Comments</p>
-        </div>
-      <!-- </div>
-      <div class="box-activity">
-        <img src="https://via.placeholder.com/120x75" alt="img"/>
-        <div class="box-activity__info">
-          <h2>Jhon Srenk <span>Commented</span></h2>
-          <p>Lorem ipsum dolor sit amet...</p>
-          <p><i class="fa fa-comment-o" aria-hidden="true"></i> 2 Comments</p>
-        </div>
-      </div>
-      <div class="box-activity">
-        <img src="https://via.placeholder.com/120x75" alt="img"/>
-        <div class="box-activity__info">
-          <h2>Jhon Srenk <span>Commented</span></h2>
-          <p>Lorem ipsum dolor sit amet...</p>
-          <p><i class="fa fa-comment-o" aria-hidden="true"></i> 2 Comments</p>
-        </div>
-      </div>
-      <div class="box-activity">
-        <img src="https://via.placeholder.com/120x75" alt="img"/>
-        <div class="box-activity__info">
-          <h2>Jhon Srenk <span>Commented</span></h2>
-          <p>Lorem ipsum dolor sit amet...</p>
-          <p><i class="fa fa-comment-o" aria-hidden="true"></i> 2 Comments</p>
-        </div>
-      </div>
-      <div class="box-activity">
-        <img src="https://via.placeholder.com/120x75" alt="img"/>
-        <div class="box-activity__info">
-          <h2>Jhon Srenk <span>Commented</span></h2>
-          <p>Lorem ipsum dolor sit amet...</p>
-          <p><i class="fa fa-comment-o" aria-hidden="true"></i> 2 Comments</p>
-        </div>
-      </div> -->
+     
+        <app-activity [countActivity]="newArticle"></app-activity>
+     
       <div class="line"></div>
     </div>
   </div>
@@ -230,37 +193,11 @@
     </div>
     <div class="col-md-4">
       <div class="col-12 wrap-videos__title d-flex align-items-end">
-        <h1>Activity</h1>
+        <h1>Channels</h1>
         <p>Browse of video</p>
       </div>
       <div class="line"></div>
-      <div class="row">
-        <div class="box-channels col-md-6">
-          <img src="https://via.placeholder.com/250x200" alt="img"/>
-        </div>
-        <div class="box-channels col-md-6">
-          <img src="https://via.placeholder.com/250x200" alt="img"/>
-        </div>
-        <div class="box-channels col-md-6">
-          <img src="https://via.placeholder.com/250x200" alt="img"/>
-        </div>
-        <div class="box-channels col-md-6">
-          <img src="https://via.placeholder.com/250x200" alt="img"/>
-        </div>
-        <div class="box-channels col-md-6">
-          <img src="https://via.placeholder.com/250x200" alt="img"/>
-        </div>
-        <div class="box-channels col-md-6">
-          <img src="https://via.placeholder.com/250x200" alt="img"/>
-        </div>
-        <div class="box-channels col-md-6">
-          <img src="https://via.placeholder.com/250x200" alt="img"/>
-        </div>
-        <div class="box-channels col-md-6">
-          <img src="https://via.placeholder.com/250x200" alt="img"/>
-        </div>
-      </div>
-
+        <app-channels [channels]="newArticle"></app-channels>
       <div class="line"></div>
     </div>
     

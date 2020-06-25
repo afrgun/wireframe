@@ -1,0 +1,9 @@
+<div class="box-activity" *ngFor="let data of countActivity">
+  <img src="{{data.urlToImage}}" alt="img" *ngIf="data.urlToImage!=''"/>
+  <img src="https://via.placeholder.com/120x75" alt="img" *ngIf="data.urlToImage==''"/>
+  <div class="box-activity__info">
+    <h2>{{data.author}} </h2>
+    <p>{{data.description | limitTo : "30"}}</p>
+    <p><i class="fa fa-comment-o" aria-hidden="true"></i> 2 Comments</p>
+  </div>
+</div>

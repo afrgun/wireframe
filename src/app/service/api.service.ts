@@ -23,7 +23,7 @@ export class ApiService {
   }
 
   getArticles(){
-    let req ={ "country": "id","apiKey": "b908cfab98cd4bfdafc093e07adda764","pageSize":5}
+    let req ={ "country": "id","apiKey": "b908cfab98cd4bfdafc093e07adda764","pageSize":6}
     return this.getDataHeader(Configuration.BASE_URL_ARTICLE + Configuration.GET_ARTICLES, req)
   }
 

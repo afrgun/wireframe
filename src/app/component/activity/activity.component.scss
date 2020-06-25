@@ -1,0 +1,35 @@
+$gold : #ffc583;
+$black : #000000;
+
+.box-activity{
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: flex-start;
+	margin-bottom: 10px;
+  
+	img{
+	  // float: left;
+	  width: 120px;
+	  height: 75px;
+	}
+	
+	&__info{
+	  margin-left: 10px;
+	  color: $gold;
+  
+	  h2{
+		font-size: 17px;
+		margin: 0;
+  
+		span{
+		  font-size: 12px;
+		}
+	  }
+	  p{
+		margin: 0;
+		font-size: 14px;
+	  }
+	}
+}
+  
