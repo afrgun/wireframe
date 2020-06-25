@@ -54,4 +54,8 @@ export class HomeComponent implements OnInit {
 
   }
 
+  handleDeleteActivity(index) {
+    this.newArticle.splice(index,1);
+  }
+
 }

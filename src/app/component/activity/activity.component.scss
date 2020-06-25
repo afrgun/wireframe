@@ -7,6 +7,7 @@ $black : #000000;
 	align-items: flex-start;
 	justify-content: flex-start;
 	margin-bottom: 10px;
+	position: relative;
   
 	img{
 	  // float: left;
@@ -30,6 +31,36 @@ $black : #000000;
 		margin: 0;
 		font-size: 14px;
 	  }
+	}
+
+	&__close{
+		display: none;
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 0;
+		height: 0;
+		border-top: 35px solid $gold;
+		border-left: 35px solid transparent;
+		cursor: pointer;
+		
+		i{
+			display: block;
+			right: 3px;
+			top: -32px;
+			position: absolute;
+		}
+	}
+
+
+
+	&:hover{
+		border: 2px solid $gold;
+		padding: 5px;
+
+		.box-activity__close{
+			display: block;
+		}
 	}
 }
   

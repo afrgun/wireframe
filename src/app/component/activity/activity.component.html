@@ -1,9 +1,12 @@
-<div class="box-activity" *ngFor="let data of countActivity">
+<div class="box-activity" *ngFor="let data of countActivity; let i = index">
   <img src="{{data.urlToImage}}" alt="img" *ngIf="data.urlToImage!=''"/>
   <img src="https://via.placeholder.com/120x75" alt="img" *ngIf="data.urlToImage==''"/>
   <div class="box-activity__info">
     <h2>{{data.author}} </h2>
     <p>{{data.description | limitTo : "30"}}</p>
     <p><i class="fa fa-comment-o" aria-hidden="true"></i> 2 Comments</p>
+  </div>
+  <div class="box-activity__close" (click)="handleDeleteActivity(i)">
+    <i class="fa fa-times" aria-hidden="true"></i>
   </div>
 </div>

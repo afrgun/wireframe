@@ -102,11 +102,11 @@
     <div class="col-md-4">
       <div class="col-12 wrap-videos__title d-flex align-items-end">
         <h1>Activity</h1>
-        <p>Browse of video</p>
+        <p>Filter activities</p>
       </div>
       <div class="line"></div>
      
-        <app-activity [countActivity]="newArticle"></app-activity>
+        <app-activity [countActivity]="newArticle" (dataIndexDelete)='handleDeleteActivity($event)'></app-activity>
      
       <div class="line"></div>
     </div>
@@ -117,8 +117,8 @@
   <div class="row">
     <div class="col-md-8 no-pr">
       <div class="col-md-8 col-sm-12 wrap-videos__title d-flex align-items-end">
-        <h1>Videos</h1>
-        <p>Browse of video</p>
+        <h1>People</h1>
+        <p>View all</p>
       </div>
       <div class="row">
         <div class="col-md-8 no-pr">
@@ -156,7 +156,7 @@
 
       <div class="col-md-8 col-sm-12 wrap-videos__title d-flex align-items-end">
         <h1>Documents</h1>
-        <p>Browse of video</p>
+        <p>Browse of documents</p>
       </div>
       <div class="row">
         <div class="col-md-8 no-pr">
@@ -194,7 +194,7 @@
     <div class="col-md-4">
       <div class="col-12 wrap-videos__title d-flex align-items-end">
         <h1>Channels</h1>
-        <p>Browse of video</p>
+        <p>Browse of channels</p>
       </div>
       <div class="line"></div>
         <app-channels [channels]="newArticle"></app-channels>
